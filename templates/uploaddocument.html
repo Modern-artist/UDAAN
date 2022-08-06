@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/prem.css' %}">
+</head>
+<body>
+    <main class="flex flex-col justify-evenly items-center h-full">
+        <ul class="steps">
+            <li class="step step-success">Personal Details</li>
+            <li class="step step-success">Communication Address</li>
+            <li class="step step-success">Educational Details</li>
+            <li class="step step-success">Documents Upload</li>
+        </ul>
+        <form method="post" action="u_document" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="card w-1/2 bg-base-100 shadow-xl">
+                <div class="card-body items-start text-center ">
+                    <label class="label" for="name">Applicant Photo</label>
+                    <input type="file" placeholder="Applicant Photo" class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="photo" required />
+                    <label class="label" for="date">Income Certificate</label>
+                    <input type="file" placeholder="Income Certificate" class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="income" required />
+                    <label class="label" for="Gender">Proof of Address</label>
+                    <input type="file" placeholder="Proof of Address" class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="address" required />
+                    <label class="label" for="Gender">10th Marksheet</label>
+                    <input type="file" placeholder="10th Marksheet" class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="marksheet" required />
+                    {% comment %} <label class="label" for="Gender">12th Marksheet<span style="color:red; font-size:80%;"> (If applicable) </span></label>
+                    <input type="file" placeholder="10th Marksheet" class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="marksheet" required />
+                    <label class="label" for="Gender">Other Marksheet<span style="color:red; font-size:80%;"> (If applicable) </span></label>
+                    <input type="file" placeholder="10th Marksheet" class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="marksheet" required /> {% endcomment %}
+                    <div class="card-actions w-full">
+                        <button class="btn btn-success btn-block">Next</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

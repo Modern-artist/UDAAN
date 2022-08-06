@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+
+<body>
+    <nav class="navlinks">
+        <div class="logo">
+            <img src="../dashbord/python logo.png"
+                alt="">
+            <h2>logo</h2>
+        </div>
+        <div class="nav">
+            <a href="">Home</a><a href="">Contact</a><a href="">About us</a>
+        </div>
+        <div class="btns">
+            <a href="dashboard" style="text-decoration:none;"><button type="button" class="btn btn-primary">Dashboard</button></a>
+            <a href="profile" style="text-decoration:none;"><button type="button" class="btn btn-primary">Profile</button></a>
+            {% comment %} <button type="button" class="btn btn-outline-warning">Warning</button> {% endcomment %}
+        </div>
+    </nav>
+    <div class="mainpg">
+        <div class="profilediv">
+            <div class="profile">
+                <img src="{{photo_url}}" alt="">
+                <h4 class="about">{{name}}</h4>
+                <span class="about">{{email}}</span>
+                <span class="about">{{phone_no}}</span>
+                <span class="about">{{address}}</span>
+            </div>
+        </div>
+        <div class="details">
+            <div class="info">
+            <h2 class="topic">Personal Info</h2>
+                <div class="cards">
+                    <div class="questions">
+                        <span class="ques">Registration Number</span>
+                        <span class="ques">Name</span>
+                        <span class="ques">Gender</span>
+                        <span class="ques">Date of Birth</span>
+                        <span class="ques">Mobile Number</span>
+                        <span class="ques">E-mail</span>
+                    </div>
+                    <div class="answers">
+                        <span class="ans">{{reg_no}}</span>
+                        <span class="ans">{{name}}</span>
+                        <span class="ans">{{gender}}</span>
+                        <span class="ans">{{dob}}</span>
+                        <span class="ans">{{phone_no}}</span>
+                        <span class="ans">{{email}}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <hr> -->
+            <div class="info">
+                <h2 class="topic">Communication Address
+                </h2>
+                <div class="cards">
+                    <div class="questions">
+                        <span class="ques">Address</span>
+                        <span class="ques">PIN</span>
+                        <span class="ques">District</span>
+                        <span class="ques">State</span>
+                    </div>
+                    <div class="answers">
+                        <span class="ans">{{address}}</span>
+                        <span class="ans">{{pin}}</span>
+                        <span class="ans">{{district}}</span>
+                        <span class="ans">{{state}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="edu">
+                <div class="eduinfo" style="margin-right: 4vw;">
+
+                    <div class="educards">
+                        <h2 class="topic">Matriculation</h2>
+                        <div class="edudata">
+                            <div class="questions">
+                                <span class="ques">Name of School</span>
+                                <span class="ques">Name of Board</span>
+                                <span class="ques">Tear of Passing</span>
+                                <span class="ques">Marks Obtain</span>
+                                <span class="ques">Total Marks</span>
+                                <span class="ques">Percentage</span>
+                            </div>
+                            <div class="answers">
+                                <span class="ans">{{name_10}}</span>
+                                <span class="ans">{{board_10}}</span>
+                                <span class="ans">{{year_10}}</span>
+                                <span class="ans">{{omarks_10}}</span>
+                                <span class="ans">{{tmarks_10}}</span>
+                                <span class="ans">{{percentage_10}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="eduinfo">
+                    <div class="educards">
+                        <h2 class="topic">Intermediate</h2>
+                        <div class="edudata">
+                            <div class="questions">
+                                <span class="ques">Name of School</span>
+                                <span class="ques">Name of Board</span>
+                                <span class="ques">Tear of Passing</span>
+                                <span class="ques">Marks Obtain</span>
+                                <span class="ques">Total Marks</span>
+                                <span class="ques">Percentage</span>
+                            </div>
+                            <div class="answers">
+                                <span class="ans">{{name_12}}</span>
+                                <span class="ans">{{board_12}}</span>
+                                <span class="ans">{{year_12}}</span>
+                                <span class="ans">{{omarks_12}}</span>
+                                <span class="ans">{{tmarks_12}}</span>
+                                <span class="ans">{{percentage_12}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/prem.css' %}" />
+</head>
+
+<body>
+    <main class="flex flex-col justify-evenly items-center h-full">
+        <ul class="steps">
+            <li class="step step-success">Personal Details</li>
+            <li class="step">Communication Address</li>
+            <li class="step">Educational Details</li>
+            <li class="step">Documents Upload</li>
+        </ul>
+        <form method="post" action="p_details">
+            {% csrf_token %}
+            <div class="card w-1/2 bg-base-100 shadow-xl">
+                <div class="card-body items-start text-center ">
+                    <label class="label" for="name">Full Name</label>
+                    <input type="text" placeholder="Name" class="input input-bordered w-full" name="name" value="{{name}}" />
+                    <p style="color:red; padding-left:2px; font-size:85%;">(Please enter Full Name as per AADHAR)</p>
+                    <label class="label" for="date">Date of Birth</label>
+                    <input type="date" placeholder="Email" class="input input-bordered w-full" name="dob" value="{{dob}}" />
+                    <p style="color:red; padding-left:2px; font-size:85%;">(Please enter Date of Birth as per AADHAR)</p>
+                    <label class="label" for="Gender">Gender</label>
+                    <input type="text" placeholder="Gender" class="input input-bordered w-full" name="gender" value="{{gender}}" />
+                    <label class="label" for="Email">Email</label>
+                    <input type="text" placeholder="Email" class="input input-bordered w-full" name="email" value="{{email}}" />
+                    <label class="label" for="Gender">Phone Number</label>
+                    <input type="number" placeholder="Phone Number" class="input input-bordered w-full" name="phone_no" value="{{phone_no}}" />
+                    <br><p style="color:red; font-weigth:500;">{{msg}}</p><br>
+                    <div class="card-actions w-full">
+                        <button class="btn btn-success btn-block">Next</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

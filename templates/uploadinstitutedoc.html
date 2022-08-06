@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Institute Document</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/prem.css' %}">
+</head>
+<body>
+    <main class="flex flex-col justify-evenly items-center h-full">
+        <ul class="steps">
+            <li class="step step-success">Institute Details</li>
+            <li class="step step-success">Upload Document</li>
+        </ul>
+        <form method="post" action="i_document" enctype="multipart/form-data">
+            {%csrf_token%}
+            <div class="card w-1/2 bg-base-100 shadow-xl">
+                <div class="card-body items-start text-center ">
+                    <div class="flex justify-around w-full gap-1">
+                        <div class="grid w-1/2">
+                            <label class="label" for="name">Information Brochure</label>
+                            <input type="file" class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="brochure" required />
+                        </div>
+                        <div class="grid w-1/2">
+                            <label class="label" for="name">Identity Proof</label>
+                            <input type="file"  class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="identity" required />
+                        </div>
+                    </div>
+                    <div class="flex justify-around w-full gap-1">
+                        <div class="grid w-1/2">
+                            <label class="label" for="name">Commercial Address</label>
+                            <input type="file" class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="address" required />
+                        </div>
+                        <div class="grid w-1/2">
+                            <label class="label" for="name">Pan Card</label>
+                            <input type="file"  class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="pan" required />
+                        </div>
+                    </div>
+                
+                    <label class="label" for="name">Fee Payment Challan</label>
+                    <input type="file"  class="input input-bordered w-full file:bg-slate-300 file:border-0 file:p-2 file:my-2" name="fee" required />
+
+                    <div class="card-actions w-full">
+                        <button class="btn btn-success btn-block">Next</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

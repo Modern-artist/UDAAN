@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ins_pg</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/adm.css' %}" />
+  </head>
+
+  <body>
+    <nav class="navlinks">
+      <div class="logo">
+        <img src="../dashbord/python logo.png" alt="" />
+        <h2>logo</h2>
+      </div>
+      <div class="nav">
+        <a href="">Home</a><a href="">Contact</a><a href="">About us</a>
+      </div>
+    </nav>
+    <form method="post" action="notice" enctype="multipart/form-data" class="notice">
+        {% csrf_token %}
+        <label for="title"><h3>Title :</h3>
+            <input type="text" name="title" placeholder="Notice" required>
+        </label>
+        <label for="file"><h3>File :</h3>
+            <input type="file" name="notice_file" placeholder="Upload Notice" required>
+        </label>
+        <button type="submit">Post</button>
+    </form>
+  </body>
+</html>

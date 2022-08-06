@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+
+<body>
+    <nav class="navlinks">
+        <div class="logo">
+            <img src="/python logo.png"
+                alt="">
+            <h2>logo</h2>
+        </div>
+        <div class="nav">
+            <a href="">Home</a><a href="">Contact</a><a href="">About us</a>
+        </div>
+        <div class="btns">
+            <a href="dashboard" style="text-decoration:none;"><button type="button" class="btn btn-primary">Dashboard</button></a>
+            <a href="profile" style="text-decoration:none;"><button type="button" class="btn btn-primary">Profile</button></a>
+        </div>
+    </nav>
+    <div class="mainpg">
+        <div class="profilediv">
+            <div class="profile">
+                <img src="{{photo_url}}" alt="">
+                <h4 class="about">{{name}}</h4>
+                <span class="about">{{email}}</span>
+                <span class="about">{{phone_no}}</span>
+                <span class="about">{{address}}</span>
+            </div>
+        </div>
+        <div class="details">
+            <div class="info">
+            <h2 class="topic">Schoolarship Information</h2>
+                <div class="cards">
+                    <div class="questions">
+                        <span class="ques">Registration Number</span>
+                        <span class="ques">Name of Examination</span>
+                        <span class="ques">Institute Alloted</span>
+                        <span class="ques">Duration</span>
+                    </div>
+                    <div class="answers">
+                        <span class="ans">{{reg_no}}</span>
+                        <span class="ans">NA</span>
+                        <span class="ans">NA</span>
+                        <span class="ans">NA</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <hr> -->
+            <div class="info">
+                <h2 class="topic">Important Links
+                </h2>
+                <div class="cards">
+                    <div class="questions">
+                        <span class="ques">link1</span>
+                        <span class="ques">link2</span>
+                        <span class="ques">link3</span>
+                        <span class="ques">link4</span>
+                        <span class="ques">link4</span>
+                        <span class="ques">link5</span>
+                    </div>
+                    <div class="answers">
+                        <span class="ans">{{link}}</span>
+                        <span class="ans">{{link}}</span>
+                        <span class="ans"><a href="council" style="text-decoration;">Councilling</a></span>
+                        <span class="ans">{{link}}</span>
+                        <span class="ans">{{link}}</span>
+                        <span class="ans">{{link}}</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+</body>
+
+</html>

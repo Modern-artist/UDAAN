@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Details </title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/prem.css' %}" />
+</head>
+<body>
+    <main class="flex flex-col justify-evenly items-center h-full">
+        <ul class="steps">
+            <li class="step step-success">Personal Details</li>
+            <li class="step step-success">Communication Address</li>
+            <li class="step step-success">Educational Details</li>
+            <li class="step">Documents Upload</li>
+        </ul>
+        <form method="post" action="e_details">
+            {%csrf_token%}
+            <div class="card w-1/2 bg-base-100 shadow-xl">
+                <div class="card-body items-start text-center ">
+                    <br><p style="font-size:200%; color:grey;"> 10th Board </p>
+                    <label class="label" for="name">Name of School</label>
+                    <input type="text" placeholder="Name" class="input input-bordered w-full " name="name_10" required />
+                    <label class="label" for="date">Name of Board</label>
+                    <input type="text" placeholder="Board" class="input input-bordered w-full " name="board_10" required />
+                    <label class="label" for="Month">Year of passing</label>
+                    <input type="text" placeholder="Year of passing" class="input input-bordered w-full " name="year_10" required />
+                    <div class="w-full flex justify-around gap-1">
+                        <div class="flex flex-col">
+                            <label class="label" for="name">Total Marks Obtained</label>
+                            <input type="number" placeholder="Total Marks Obtained" class="input input-bordered w-full max-w-xs" name="omarks_10" required />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="label" for="name">Out of Total Marks</label>
+                            <input type="number" placeholder="Out of Total Marks" class="input input-bordered w-full max-w-xs" name="tmarks_10" required />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="label" for="name">Percentage</label>
+                            <input type="number" placeholder="Percentage" class="input input-bordered w-full max-w-xs" name="percentage_10" required />
+                        </div>
+
+                    </div>
+                    <br><p style="font-size:200%; color:grey;"> 12th Board </p>
+                    <label class="label" for="name">Name of Collage</label>
+                    <input type="text" placeholder="Name" class="input input-bordered w-full " name="name_12" />
+                    <label class="label" for="date">Name of Board</label>
+                    <input type="text" placeholder="Board" class="input input-bordered w-full " name="board_12" />
+                    <label class="label" for="Month">Year of passing</label>
+                    <input type="number" placeholder="Year of passing" class="input input-bordered w-full " name="year_12" />
+                    <div class="w-full flex justify-around gap-1">
+                        <div class="flex flex-col">
+                            <label class="label" for="name">Total Marks Obtained</label>
+                            <input type="number" placeholder="Total Marks Obtained" class="input input-bordered w-full max-w-xs" name="omarks_12" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="label" for="name">Out of Total Marks</label>
+                            <input type="number" placeholder="Out of Total Marks" class="input input-bordered w-full max-w-xs" name="tmarks_12" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="label" for="name">Percentage</label>
+                            <input type="number" placeholder="Percentage" class="input input-bordered w-full max-w-xs" name="percentage_12" />
+                        </div>
+
+                    </div>
+                    <br><p style="font-size:200%; color:grey;"> Any other Exams </p>
+                    <label class="label" for="name">Name of Institution</label>
+                    <input type="text" placeholder="Name" class="input input-bordered w-full " name="name_e" />
+                    <label class="label" for="date">Name of Board</label>
+                    <input type="text" placeholder="Board" class="input input-bordered w-full " name="board_e" />
+                    <label class="label" for="Month">Year of passing</label>
+                    <input type="number" placeholder="Year of passing" class="input input-bordered w-full " name="year_e" />
+                    <div class="w-full flex justify-around gap-1">
+                        <div class="flex flex-col">
+                            <label class="label" for="name">Total Marks Obtained</label>
+                            <input type="number" placeholder="Total Marks Obtained" class="input input-bordered w-full max-w-xs" name="omarks_e" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="label" for="name">Out of Total Marks</label>
+                            <input type="number" placeholder="Out of Total Marks" class="input input-bordered w-full max-w-xs" name="tmarks_e" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="label" for="name">Percentage</label>
+                            <input type="number" placeholder="Percentage" class="input input-bordered w-full max-w-xs" name="percentage_e" />
+                        </div>
+
+                    </div>
+                    <div class="card-actions w-full">
+                        <button class="btn btn-success btn-block">Next</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
