@@ -110,6 +110,11 @@ def insert_mark(reg,mark):
     cursor.execute('UPDATE student SET mark = %s WHERE registration_no = %s', (mark, reg))
     mydb.commit()
 
+def allot(reg,p1,p2,p3,p4,p5):
+    cursor=mydb.cursor(buffered=True)
+    cursor.execute('INSERT INTO allot VALUES (%s, %s, %s, %s, %s, %s)', (reg,p1,p2,p3,p4,p5))
+    mydb.commit()
+
 loggedin=False
 i_loggedin=False
 session_email=''
@@ -425,9 +430,21 @@ def dashboard(request):
 def council(request):
     global loggedin
     if loggedin:
+        msg=''
         info=profile_info()
         photo='media/'+info[28]
-        param={'reg_no':info[0],'name':info[1],'dob':info[2],'gender':info[3],'email':info[4],'phone_no':info[5],'address':info[6], 'photo_url':photo, 'institute':institute()}
+        p1=request.POST.get("p1",'')
+        p2=request.POST.get("p2",'')
+        p3=request.POST.get("p3",'')
+        p4=request.POST.get("p4",'')
+        p5=request.POST.get("p5",'')
+        if p1 != '' and p2 != '' and p3 != '' and p4 != '' and p5 != '':
+            if p1 == 'none' or p2 == 'none' or p3 == 'none' or p4 == 'none' or p5 == 'none':
+                msg='None cannnot be a prefernce'
+            else:
+                allot(info[0],p1,p2,p3,p4,p5)
+                return redirect('profile')
+        param={'reg_no':info[0],'name':info[1],'dob':info[2],'gender':info[3],'email':info[4],'phone_no':info[5],'address':info[6], 'photo_url':photo, 'institute':institute(), 'msg':msg}
         return render(request,'council.html',param)
     return redirect('login')
 def marks(request):

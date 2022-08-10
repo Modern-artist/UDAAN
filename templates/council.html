@@ -47,37 +47,40 @@
                     <span class="porder">Forth Preference</span>
                     <span class="porder">Fifth Preference</span>
                 </div>
-                <form class="answers ">
-                    <select class="pref" type="radio" class="data_i glass" name="genre" required>
+                <form class="answers " method="post" action="council">
+                    {% csrf_token %}
+                    <select class="pref" type="radio" class="data_i glass" name="p1" required>
                         <option value="none">none</option>
                         {% for n in institute %}
                             <option value={{n.i_reg}}>{{n.name}}</option>
                         {% endfor %}
                     </select>
-                    <select class="pref" type="radio" class="data_i glass" name="genre" required>
+                    <select class="pref" type="radio" class="data_i glass" name="p2" required>
                         <option value="none">none</option>
                         {% for n in institute %}
                             <option value={{n.i_reg}}>{{n.name}}</option>
                         {% endfor %}
                     </select>
-                    <select class="pref" type="radio" class="data_i glass" name="genre" required>
+                    <select class="pref" type="radio" class="data_i glass" name="p3" required>
                         <option value="none">none</option>
                         {% for n in institute %}
                             <option value={{n.i_reg}}>{{n.name}}</option>
                         {% endfor %}
                     </select>
-                    <select class="pref" type="radio" class="data_i glass" name="genre" required>
+                    <select class="pref" type="radio" class="data_i glass" name="p4" required>
                         <option value="none">none</option>
                         {% for n in institute %}
                             <option value={{n.i_reg}}>{{n.name}}</option>
                         {% endfor %}
                     </select>
-                    <select class="pref" type="radio" class="data_i glass" name="genre" required>
+                    <select class="pref" type="radio" class="data_i glass" name="p5" required>
                         <option value="none">none</option>
                         {% for n in institute %}
                             <option value={{n.i_reg}}>{{n.name}}</option>
                         {% endfor %}
                     </select>
+                    <center><p style="color:red; font-weight:500;">{{msg}}</p></center>
+                    <button>Submit</button>
                     </form>
 
                 </div>
