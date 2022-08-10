@@ -9,9 +9,11 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     {%load static%}
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homecss.css' %}">
     <style>
         .navlinks {
             position: static;
+            width:98vw;
         }
         table, th, td {
             margin: 50px 2vw;
@@ -21,7 +23,14 @@
         }
         th, td{
             margin: 5px;
+        }
 
+        .sub_form{
+            width: 20vw;
+            padding: 10px;
+        }
+        .logo img{
+            border-radius: 99px;
         }
     </style>
 </head>
@@ -29,12 +38,12 @@
 <body>
     <nav class="navlinks">
         <div class="logo">
-            <img src="../dashbord/python logo.png"
+            <img src="{% static 'img/logo.png' %}"
                 alt="">
             <h2>logo</h2>
         </div>
         <div class="nav">
-            <a href="">Home</a><a href="">Contact</a><a href="">About us</a>
+            <a href="home">Home</a><a href="">Contact</a><a href="">About us</a>
         </div>
         <div class="btns">
             <a href="dashboard" style="text-decoration:none;"><button type="button" class="btn btn-primary">Dashboard</button></a>
@@ -67,7 +76,9 @@
                 </tr>
             {% endfor %}
         </table>
-        <button type="submit">Submit</button>
+        <center>
+        <button class="btn btn-info sub_form" type="submit">Submit</button>
+        <center>
     </form>
 </body>
 

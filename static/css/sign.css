@@ -9,6 +9,8 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
+  background-image: url("https://img.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg?w=2000&t=st=1660024850~exp=1660025450~hmac=a8ef6737d690f33dfa5665f443d04818849dddb54b7bd5ec020974388fff61f4");
+  background-size: cover;
 }
 
 a {
@@ -96,7 +98,7 @@ input[type=button], input[type=submit], input[type=reset]  {
   box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
-  margin: 5px 20px 40px 20px;
+  margin: 30px 20px 40px 20px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -106,6 +108,7 @@ input[type=button], input[type=submit], input[type=reset]  {
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
   background-color: #39ace7;
+
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -125,7 +128,7 @@ input[type=text] {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 5px;
+  margin: 20px;
   width: 85%;
   border: 2px solid #f6f6f6;
   -webkit-transition: all 0.5s ease-in-out;
@@ -259,9 +262,14 @@ input[type=text]:placeholder {
 } 
 
 #icon {
-  width:60%;
+  width: 100px;
 }
 
 * {
   box-sizing: border-box;
+}
+.log_head{
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto 60px auto;
 }

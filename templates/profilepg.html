@@ -9,12 +9,12 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/homecss.css' %}"> {% endcomment %}
 </head>
-
 <body>
-    <nav class="navlinks">
+    <nav class="navlinks" >
         <div class="logo">
-            <img src="../dashbord/python logo.png"
+            <img src="{% static 'img/logo.png' %}"
                 alt="">
             <h2>logo</h2>
         </div>
@@ -23,7 +23,6 @@
         </div>
         <div class="btns">
             <a href="dashboard" style="text-decoration:none;"><button type="button" class="btn btn-primary">Dashboard</button></a>
-            <a href="profile" style="text-decoration:none;"><button type="button" class="btn btn-primary">Profile</button></a>
             {% comment %} <button type="button" class="btn btn-outline-warning">Warning</button> {% endcomment %}
         </div>
     </nav>

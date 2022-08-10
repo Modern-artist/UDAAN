@@ -16,17 +16,18 @@
    <div class="wrapper fadeInDown">
         <div id="formContent">
           <!-- Tabs Titles -->
-          <h1 style="font-weight:500; color:#005b9a; ">LogIn</h1>
+          <div class="log_head">
+          <h1 style="font-weight:500; color:#005b9a; ">LOGIN</h1>
       
           <!-- Icon -->
           <div class="fadeIn first">
             <img src="{% static 'img/logo.png' %}" id="icon" alt="sih icon" />
           </div>
-      
+        </div>
           <!-- Login Form -->
           <form method="post" action="login">
             {% csrf_token %}
-            <input type="text" id="email" class="fadeIn second" name="email" placeholder="login">
+            <input type="text" id="email" class="fadeIn second" name="email" placeholder="login ID">
             <input type="date" id="dob" class="fadeIn third" name="dob" placeholder="password" style="width:382.5px;height:50px"><br>
             <input type="submit" class="fadeIn fourth" value="Log In">
             <p style="color: red; font-weight:500;">{{msg}}<p>

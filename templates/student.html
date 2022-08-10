@@ -16,24 +16,29 @@
 
   <body>
     <nav class="navlinks">
-      <div class="logo">
-        <img src="../dashbord/python logo.png" alt="" />
-        <h2>logo</h2>
-      </div>
-      <div class="nav">
-        <a href="">Home</a><a href="">Contact</a><a href="">About us</a>
-      </div>
+      
+        <div class="logo">
+          <img src="{% static 'img/logo.png'%}" alt="" />
+          <h2>logo</h2>
+        </div>
+        <div class="nav">
+          <a href="">Home</a><a href="">Contact</a><a href="">About us</a>
+        </div>
+        <a href="dashboard" style="text-decoration: none"
+          ><button type="button" class="btn btn-primary">Dashboard</button></a
+        >
+      
     </nav>
     <div class="al_cards">
-    {% for n in student %}
+      {% for n in student %}
       <div class="pro_card">
-        <img src="media/{{n.photo}}" alt="">
+        <img src="media/{{n.photo}}" alt="" />
         <h4>{{n.name}}</h4>
         <span>{{n.email}}</span>
         <span>{{n.phone_no}}</span>
         <span>{{n.address}}</span>
       </div>
-    {% endfor %}
+      {% endfor %}
     </div>
   </body>
 </html>
