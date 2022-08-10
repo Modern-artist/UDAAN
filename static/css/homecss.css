@@ -23,6 +23,7 @@ body{
 .logo img {
     padding-right: 10px;
     width: 60px;
+    /* margin: 0; */
 }
 
 .nav {
@@ -37,6 +38,9 @@ body{
     height: 40px;
     font-weight: 300;
     padding: 6px 16px;
+    /* border-bottom: 2px solid #656565; */
+    /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 99px;
     font-size: 1.2rem;
     transition: 0.3s ease-in-out;
@@ -53,6 +57,8 @@ nav a:hover{
 
     background-size: cover;
     height: 10vh;
+    width: 100vw;
+    /* padding: 0; */
 
 }
 
@@ -90,12 +96,38 @@ nav a:hover{
 }
 
 .utube h2 {
-    background-image: linear-gradient(92.56deg, #1ff0ff 3.42%, #0037ff 60.21%, #002aff 82.06%);
+    background-image: linear-gradient(92.56deg, #1ff0ff 30.42%, #0037ff 70.21%, #002aff 82.06%);
     background-clip: text;
+    text-align: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-top: 20px;
     /* text-fill-color: transparent; */
 
+}
+.lap {
+    width: 45vw;
+    /* height: 40vw; */
+    max-width: 2034px;
+    max-height: 1543px;
+    margin: 0 auto;
+}
+.vid {
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 67.5%;
+    height: 0;
+}
+.vid iframe {
+    box-sizing: border-box;
+    background: url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat;
+    background-size: contain;
+    padding: 11.9% 15.5% 14.8%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .notice {

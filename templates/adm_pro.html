@@ -17,7 +17,7 @@
   <body style="background-color: rgb(225, 225, 225)">
     <nav class="navlinks">
       <div class="logo">
-        <img src="../dashbord/python logo.png" alt="" />
+        <img src="{% static 'img/logo.png'%}" alt="sih logo" />
         <h2>logo</h2>
       </div>
       <div class="nav">
@@ -30,7 +30,7 @@
     </nav>
     <div class="adm">
       <a class="admcard" href="student">
-        <img src="student.png " alt="" />
+        <img src="https://picsum.photos/200" alt="" />
         <div class="stud">
           <h3>Student</h3>
           <p>
@@ -40,10 +40,12 @@
             pariatur totam numquam, sequi nihil exercitationem ex odio rem porro
             repudiandae corporis.
           </p>
+        <button type="button" class="btn btn-primary">Primary</button>
+
         </div>
       </a>
       <a class="admcard" href="institute">
-        <img src="student.png " alt="" />
+        <img src="https://picsum.photos/200" alt="" />
         <div class="stud">
           <h3>Institute</h3>
           <p>
@@ -53,10 +55,14 @@
             pariatur totam numquam, sequi nihil exercitationem ex odio rem porro
             repudiandae corporis.
           </p>
+        <button type="button" class="btn btn-primary">Primary</button>
+
         </div>
       </a>
+    {% comment %} </div>
+    <div class="adm"> {% endcomment %}
       <a class="admcard" href="notice">
-        <img src="student.png " alt="" />
+        <img src="https://picsum.photos/200" alt="" />
         <div class="stud">
           <h3>Notice</h3>
           <p>
@@ -66,10 +72,12 @@
             pariatur totam numquam, sequi nihil exercitationem ex odio rem porro
             repudiandae corporis.
           </p>
+        <button type="button" class="btn btn-primary">Primary</button>
+
         </div>
       </a>
       <a class="admcard" href="marks">
-        <img src="student.png " alt="" />
+        <img src="https://picsum.photos/200" alt="" />
         <div class="stud">
           <h3>Marks</h3>
           <p>
@@ -79,9 +87,10 @@
             pariatur totam numquam, sequi nihil exercitationem ex odio rem porro
             repudiandae corporis.
           </p>
+            <button type="button" class="btn btn-primary" style="margin:auto">Primary</button>
         </div>
       </a>
-      
+    </div>
     </div>
   </body>
 </html>
