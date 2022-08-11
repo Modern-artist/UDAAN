@@ -112,7 +112,8 @@ def insert_mark(reg,mark):
 
 def allot(reg,p1,p2,p3,p4,p5):
     cursor=mydb.cursor(buffered=True)
-    cursor.execute('INSERT INTO allot VALUES (%s, %s, %s, %s, %s, %s)', (reg,p1,p2,p3,p4,p5))
+    ins=''
+    cursor.execute('INSERT INTO allot VALUES (%s, %s, %s, %s, %s, %s, %s)', (reg,p1,p2,p3,p4,p5,ins))
     mydb.commit()
 
 loggedin=False
