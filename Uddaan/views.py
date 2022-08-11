@@ -117,6 +117,7 @@ def allot(reg,p1,p2,p3,p4,p5):
 
 loggedin=False
 i_loggedin=False
+a_loggedin=False
 session_email=''
 session_dob=''
 name=''
@@ -161,28 +162,44 @@ def home(request):
     return render(request,'home.html',param)
 
 def a_home(request):
-    return render(request,'adm_pro.html')
+    global a_loggedin
+    if a_loggedin:
+        return render(request,'adm_pro.html')
+    else:
+        return redirect('a_login')
 
 def s_list(request):
-    param={'student':student()}
-    return render(request,'student.html',param)
+    global a_loggedin
+    if a_loggedin:
+        param={'student':student()}
+        return render(request,'student.html',param)
+    else:
+        return redirect('a_login')
 
 def i_list(request):
-    param={'student':institute()}
-    return render(request,'institute.html',param) 
+    global a_loggedin
+    if a_loggedin:
+        param={'student':institute()}
+        return render(request,'institute.html',param) 
+    else:
+        return redirect('a_login')
 
 def notice(request):
-    if request.method == "POST":
-        title=request.POST.get('title','')
-        file=request.FILES['notice_file']
-        if title != '':
-            n=sno()+1
-            file_name="notice_"+str(n)+"."+(file.name).split('.')[-1]
-            insert_notice(n, title, file_name)
-            fs = FileSystemStorage()
-            fs.save(file_name,file)
-            return redirect('student')
-    return render(request,'notice.html')
+    global a_loggedin
+    if a_loggedin:
+        if request.method == "POST":
+            title=request.POST.get('title','')
+            file=request.FILES['notice_file']
+            if title != '':
+                n=sno()+1
+                file_name="notice_"+str(n)+"."+(file.name).split('.')[-1]
+                insert_notice(n, title, file_name)
+                fs = FileSystemStorage()
+                fs.save(file_name,file)
+                return redirect('student')
+        return render(request,'notice.html')
+    else:
+        return redirect('a_login')
 
 def personal_details(request):
     global name, dob, gender, email, phone_no
@@ -230,6 +247,11 @@ def login(request):
     param={'msg':msg,'name':'Student ','url':"register",'url1':"login"}
     return render(request,'login.html',param)
 
+def logout(request):
+    global loggedin
+    loggedin=False
+    return redirect('home')
+
 def i_login(request):
     global i_loggedin
     msg=''
@@ -245,6 +267,31 @@ def i_login(request):
             msg = 'Incorrect username or password'
     param={'msg':msg,'name':'Student ','url':"register",'url1':"login"}
     return render(request,'i_login.html',param)
+
+def i_logout(request):
+    global i_loggedin
+    i_loggedin=False
+    return redirect('home')
+
+def a_login(request):
+    global a_loggedin
+    msg=''
+    email=request.POST.get('email','none')
+    password=request.POST.get('password','none')
+    param={'msg':msg}
+    if(email!='none' and password!='none'):
+        if email=='admin' and password=='(1234567890)':
+            a_loggedin=True
+            return redirect('a_home') 
+        else:
+            msg = 'Incorrect username or password'
+    param={'msg':msg,'name':'Student ','url':"register",'url1':"login"}
+    return render(request,'a_login.html',param)
+
+def a_logout(request):
+    global a_loggedin
+    a_loggedin=False
+    return redirect('a_login')
 
 def communication_details(request):
     global name, dob, gender, email, phone_no, address, pin, district, state,name_10, board_10, year_10, omarks_10,tmarks_10, percentage_10,name_12, board_12, year_12, omarks_12,tmarks_12, percentage_12, name_e, board_e, year_e, omarks_e, tmarks_e, percentage_e
@@ -448,11 +495,15 @@ def council(request):
         return render(request,'council.html',param)
     return redirect('login')
 def marks(request):
-    msg=''
-    for i in student():
-        mark=request.POST.get(str(i['reg']),'')
-        if(mark!=''):
-            insert_mark(i['reg'], mark)
-            msg='Marks Updated successfully !!!'
-    param={'student':student(),'msg':msg}
-    return render(request,'marks.html',param)
+    global a_loggedin
+    if a_loggedin:
+        msg=''
+        for i in student():
+            mark=request.POST.get(str(i['reg']),'')
+            if(mark!=''):
+                insert_mark(i['reg'], mark)
+                msg='Marks Updated successfully !!!'
+        param={'student':student(),'msg':msg}
+        return render(request,'marks.html',param)
+    else:
+        return redirect('a_login')
