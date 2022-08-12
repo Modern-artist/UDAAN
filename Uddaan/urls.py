@@ -40,6 +40,7 @@ urlpatterns = [
     path('i_details',views.institute_details,name='i_details'),
     path('i_document',views.i_document_upload,name='i_document'),
     path('profile',views.profile,name='profile'),
+    path('i_profile',views.i_profile,name='i_profile'),
     path('dashboard',views.dashboard,name='dashboard'),
     path('council',views.council,name='council'),
     path('marks',views.marks,name='marks')

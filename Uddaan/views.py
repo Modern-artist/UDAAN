@@ -60,6 +60,14 @@ def profile_info():
     a=cursor.fetchone()
     return a
 
+def i_profile_info():
+    global i_session_email, i_session_password
+    cursor=mydb.cursor(buffered=True)
+    cursor.execute('SELECT * FROM institute WHERE email = %s and password = %s', (i_session_email, i_session_password))
+    a=cursor.fetchone()
+    print(a)
+    return a
+
 def student():
     b=[]
     cursor=mydb.cursor(buffered=True)
@@ -121,6 +129,8 @@ i_loggedin=False
 a_loggedin=False
 session_email=''
 session_dob=''
+i_session_email=''
+i_session_password=''
 name=''
 dob=''
 gender=''
@@ -254,7 +264,7 @@ def logout(request):
     return redirect('home')
 
 def i_login(request):
-    global i_loggedin
+    global i_loggedin, i_session_email, i_session_password
     msg=''
     email=request.POST.get('email','none')
     password=request.POST.get('password','none')
@@ -262,16 +272,19 @@ def i_login(request):
     if(email!='none' and password!='none'):
         if i_account(email,password):
             i_loggedin=True
-            param={'student':institute()}
-            return render(request,'institute.html',param) 
+            i_session_email=email
+            i_session_password=password
+            return redirect('i_profile')
         else:
             msg = 'Incorrect username or password'
     param={'msg':msg,'name':'Student ','url':"register",'url1':"login"}
     return render(request,'i_login.html',param)
 
 def i_logout(request):
-    global i_loggedin
+    global i_loggedin, i_session_email, i_session_password
     i_loggedin=False
+    i_session_email=''
+    i_session_password=''
     return redirect('home')
 
 def a_login(request):
@@ -508,3 +521,11 @@ def marks(request):
         return render(request,'marks.html',param)
     else:
         return redirect('a_login')
+
+def i_profile(request):
+    global i_loggedin
+    if i_loggedin:
+        info=i_profile_info()
+        param={'reg_no':info[0],'name':info[1],'exam':info[2],'email':info[3],'phone_no':info[4],'account':info[5],'ifc':info[6],'website':info[8]}
+        return render(request, 'i_profile.html', param)
+    return redirect('i_login')
