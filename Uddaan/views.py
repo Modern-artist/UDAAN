@@ -169,7 +169,8 @@ password=''
 i_phone_no=''
 
 def home(request):
-    param={'notice':get_notice()}
+    global loggedin
+    param={'notice':get_notice(), 'login':loggedin}
     return render(request,'home.html',param)
 
 def a_home(request):
