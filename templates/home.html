@@ -21,14 +21,18 @@
             <div class="logo">
                 <img src="{% static 'img/logo.png' %}"
                     alt="">
-                <h2>logo</h2>
+                <h2>UDAAN</h2>
             </div>
             <div class="nav">
                 <a href="">Home</a><a href="">Contact</a><a href="">About us</a>
             </div>
             {% if login %}
             <div class="btns">
-                <a href="profile"><button type="button" class="btn btn-info" style="margin: 0 6px 6px 0;">Profile</button></a><br>
+                <img src="{% static 'img/logo.png' %}"
+                alt="">
+            {% comment %} <h2>logo</h2> {% endcomment %}
+                
+                </a><br>
             </div>
             {% else %}
                 <div class="btns">
@@ -47,7 +51,7 @@
         </div>
         <div class="para">
             <p>This website acts as a link between the financially weak students who cannot afford to get coaching for
-                various competitive examinations.</p>
+                various competitive examinations and coaching institutes.</p>
             <button type="button" class="btn btn-warning" onclick="clicking_reg()">Register now
             </button>
         </div>

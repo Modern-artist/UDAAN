@@ -11,28 +11,38 @@
       crossorigin="anonymous"
     />
     {% load static%}
-    <link rel="stylesheet" href="{% static 'css/adm.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/notice.css' %}" />
+
+    <!-- <link rel="stylesheet" href="adm.css" /> -->
+
+    <!-- <link rel="stylesheet" href="../static/css/new.css"> -->
   </head>
 
   <body>
-    <nav class="navlinks">
+    <nav>
       <div class="logo">
-        <img src="../dashbord/python logo.png" alt="" />
-        <h2>logo</h2>
+        <img src="../static/img/logo.png" alt="logo" />
       </div>
-      <div class="nav">
-        <a href="">Home</a><a href="">Contact</a><a href="">About us</a>
-      </div>
+
+      {% comment %} <ul class="navlinks">
+        <li><a href="">Home</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">About Us</a></li>
+      </ul> {% endcomment %}
     </nav>
-    <form method="post" action="notice" enctype="multipart/form-data" class="notice">
-        {% csrf_token %}
-        <label for="title"><h3>Title :</h3>
-            <input type="text" name="title" placeholder="Notice" required>
+    
+    <form method="post" action="notice" enctype="multipart/form-data" >
+      {% csrf_token %}
+        <label for="title">
+          Title
+          <input type="text" name="title" placeholder="Notice" required>
         </label>
-        <label for="file"><h3>File :</h3>
-            <input type="file" name="notice_file" placeholder="Upload Notice" required>
+        <label for="file">
+          File
+          <input type="file" name="notice_file"  required>
         </label>
         <button type="submit">Post</button>
     </form>
+    
   </body>
 </html>

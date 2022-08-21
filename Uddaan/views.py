@@ -123,6 +123,17 @@ def allot(reg,p1,p2,p3,p4,p5):
     ins=''
     cursor.execute('INSERT INTO allot VALUES (%s, %s, %s, %s, %s, %s, %s)', (reg,p1,p2,p3,p4,p5,ins))
     mydb.commit()
+    
+def questions():
+    b=[]
+    cursor=mydb.cursor(buffered=True)
+    cursor.execute('SELECT * FROM question')
+    a=cursor.fetchone()
+    while a:
+        c={'no':a[0],'question':a[1],'option1':a[2],'option2':a[3],'option3':a[4],'option4':a[5]}
+        b.append(c)
+        a=cursor.fetchone()
+    return b
 
 loggedin=False
 i_loggedin=False
@@ -530,3 +541,10 @@ def i_profile(request):
         param={'reg_no':info[0],'name':info[1],'exam':info[2],'email':info[3],'phone_no':info[4],'account':info[5],'ifc':info[6],'website':info[8]}
         return render(request, 'i_profile.html', param)
     return redirect('i_login')
+
+def exam(request):
+    global loggedin
+    if loggedin:
+        param={'questions':questions(),'len':len(questions())}
+        return render(request, 'exam.html',param)
+    return redirect('login')

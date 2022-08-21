@@ -43,7 +43,8 @@ urlpatterns = [
     path('i_profile',views.i_profile,name='i_profile'),
     path('dashboard',views.dashboard,name='dashboard'),
     path('council',views.council,name='council'),
-    path('marks',views.marks,name='marks')
+    path('marks',views.marks,name='marks'),
+    path('exam',views.exam,name='exam')
 ]
 
 if settings.DEBUG:

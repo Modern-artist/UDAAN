@@ -1,0 +1,96 @@
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('../img/poorstu.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo img {
+    padding-right: 10px;
+    width: 4rem;
+    height: 4rem;
+    /* margin: 0; */
+}
+.navlinks{
+    list-style-type: none;
+    display: flex;
+}
+.navlinks li{
+    padding: 10px 20px;
+}
+
+.navlinks li a{
+    text-decoration: none;
+    font-size: large;
+    color:white;
+    font-weight: bold;
+}
+.navlinks li:hover{
+    background-color: #06b6d4;
+    border-radius: 25px;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: #f1f5f9;
+    padding: 30px ;
+    height: 300px;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+form label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    font-weight: bold;
+}
+
+form label input{
+    width: 100%;
+    padding: 10px;
+    background:#e5e7eb;
+    margin: 15px;
+    border: none;
+}
+
+button{
+    padding:10px 20px;
+    border: none;
+    align-self: center;
+    /* width: 100px; */
+    border-radius: 5px;
+    background-color: #06b6d4;
+    font-weight: 600;
+    font-size: 20px;
+    width: 100%;
+    color:#1e293b;
+    font-weight: 700;
+}
+
+button:hover{
+    background-color: #22d3ee;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/exam.css' %}" />
+    <title>exam</title>
+  </head>
+  <body>
+    <div class="fullpg">
+      {% for i in questions %}
+      <div class="ques" id={{i.no}}>
+        <h2>Question {{i.no}}</h2>
+        <p>
+          {{i.question}}
+        </p>
+        <!-- <span>Opption 1</span><span>Opption 2</span><span>Opption 3</span
+        ><span>Opption 4</span> -->
+        <div class = "opn">
+          <input class="opt1" type="radio" name="q1" id="o1"> {{i.option1}}<br>
+          <input class="opt2" type="radio" name="q1" id="o2"> {{i.option2}}<br>
+          <input class="opt3" type="radio" name="q1" id="o3"> {{i.option3}}<br>
+          <input class="opt4" type="radio" name="q1" id="o4"> {{i.option4}}<br>
+        </div>
+        <button onclick="next()" class="next">Next</button>
+      </div>
+      {% endfor %}
+      <div class="no_ques">
+        <div class="mark_heading">
+          <h2>Total Questions</h2>
+        </div>
+        <div class="questions">
+          {% for i in questions %}
+            <div class="attempt">
+              <span>{{i.no}}</span>
+            </div>
+          {% endfor %}
+
+          <button type = "submit" class = "but">submit</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      {% for i in questions %}
+        document.getElementById({{i.no}}).style.display="none";
+      {% endfor %}
+      document.getElementById(1).style.display="block";
+      var dis=1;
+      var answer={1:'',2:'',3:'',4:''}
+      function next(){
+        if(dis < {{len}}){
+          document.getElementById(dis).style.display="none";
+          dis=dis+1;
+          document.getElementById(dis).style.display="block";
+        }
+        else{
+          dis=dis+1;
+        }
+        a=0;
+        if(document.getElementsByClassName("opt1")[dis-2].checked){
+          document.getElementsByClassName("attempt")[dis-2].style.backgroundColor="#29AB87";
+          answer[dis-1] = 1;
+        }
+        else if(document.getElementsByClassName("opt2")[dis-2].checked){
+          document.getElementsByClassName("attempt")[dis-2].style.backgroundColor="#29AB87";
+          answer[dis-1] = 2;
+        }
+        else if(document.getElementsByClassName("opt3")[dis-2].checked){
+          document.getElementsByClassName("attempt")[dis-2].style.backgroundColor="#29AB87";
+          answer[dis-1] = 3;
+        }
+        else if(document.getElementsByClassName("opt4")[dis-2].checked){
+          document.getElementsByClassName("attempt")[dis-2].style.backgroundColor="#29AB87";
+          answer[dis-1] = 4;
+        }
+        else{
+          document.getElementsByClassName("attempt")[dis-2].style.backgroundColor="#FA8072";
+        }
+      }
+    </script>
+  </body>
+</html>

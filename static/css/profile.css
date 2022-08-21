@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: #E2E6F8;
+    background-color: rgb(255, 251, 239);
 }
 .navlinks {
     display: flex;
@@ -22,8 +22,9 @@ body{
 
 .logo img {
     padding-right: 10px;
-    width: 60px;
-    border-radius: 30px;
+    width: 4rem;
+    height: 4rem;
+    /* margin: 0; */
 }
 
 .nav {
@@ -58,9 +59,13 @@ nav a:hover{
 
 .profilediv {
     width: 20vw;
-    background-color: #FFBC66;
+
+    background: #ffb347;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffcc33, #ffb347);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffcc33, #ffb347); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: 100vh;
-    /* position: fixed */
 }
 
 .mainpg {
@@ -71,12 +76,14 @@ nav a:hover{
 
 .profile {
     /* padding: 12px; */
-    position: absolute;
+    /* position: absolute;
     top: 20vh;
-    left: 3vw;
+    left: 3vw; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin-top: 20vh;
     overflow: hidden;
 }
 
@@ -88,7 +95,7 @@ nav a:hover{
 .info {
     display: flex;
     flex-direction: column;
-    background: #F7F7F7;
+    background: #ffffff;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     width: 78vw;
@@ -134,7 +141,7 @@ nav a:hover{
     width: 38vw;
     display: flex;
     flex-direction: row;
-    background: #F7F7F7;
+    background: #ffffff;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     margin: 2vw 0px;

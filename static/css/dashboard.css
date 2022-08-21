@@ -23,8 +23,9 @@ body{
 
 .logo img {
     padding-right: 10px;
-    width: 60px;
-    border-radius: 100px;
+    width: 4rem;
+    height: 4rem;
+    /* margin: 0; */
 }
 
 .nav {
@@ -46,7 +47,7 @@ body{
 nav a:hover{
     scale: 1.05;
     font-weight: 400;
-    background-color: #ffb451;
+    /* background-color: #ffb451; */
     box-shadow: 3px 3px 10px rgba(36, 35, 35, 0.25);
 }
 .profile img {

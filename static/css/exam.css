@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+  overflow: hidden;
+}
+.ques {
+  width: 68vw;
+  height: 100vh;
+  overflow: scroll;
+  padding: 20px;
+  font-size: 1.3rem;
+}
+.fullpg {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  /* overflow: scroll; */
+  background-color: rgb(246, 246, 246);
+}
+.no_ques {
+  overflow: scroll;
+  width: 30vw;
+  margin: 1vw;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  max-height: 84vh;
+  display: flex;
+  flex-direction: column;
+}
+.attempt {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin: 10px;
+  background-color: rgb(221, 221, 221);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.questions {
+  display: flex;
+}
+.ques p{
+    margin: 20px 0;
+    font-weight: 300;
+}
+.no_ques h2{
+    margin: 20px;
+    text-align: center;
+}
+.ques input{
+    font-size: 2rem;
+    padding: 20px;
+}
+.opt{
+    font-size: 2rem;
+    padding: 20px;
+}
+button.next{
+  margin-top: 4rem;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #50C878;
+  color: #fff;
+  box-shadow: rgba(95, 186, 233, 0.4) 0px 10px 30px 0px;
+  border: none;
+}
+button.but{
+  position: absolute; 
+  bottom: 20px; 
+  right: 9.5rem;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: rgb(57, 172, 231);
+  color: #fff;
+  box-shadow: rgba(95, 186, 233, 0.4) 0px 10px 30px 0px;
+  border: none;
+}
+.opn{
+  font-size: 1.5rem;
+  font-weight: 300;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.6em;
+}
