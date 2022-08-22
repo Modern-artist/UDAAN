@@ -7,11 +7,12 @@
 body{
     overflow-x: hidden;
 }
+
 .navlinks {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 8px;
+    padding: 12px;
     
 }
 
@@ -21,9 +22,10 @@ body{
 }
 
 .logo img {
-    padding-right: 10px;
-    width: 4rem;
-    height: 4rem;
+    /* padding: 10px; */
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 0;
     /* margin: 0; */
 }
 
@@ -54,10 +56,11 @@ nav a:hover{
 }
 
 .heropg {
-    /* background-image: url(/Group\ 1.jpg); */
-
+    background-image: url(../img/Group1.jpg);
+    height: 70vh;
     background-size: cover;
-    height: 10vh;
+    /* background-size: cover; */
+    /* height: 10vh; */
     width: 100vw;
     /* padding: 0; */
 
@@ -70,27 +73,28 @@ nav a:hover{
 }
 
 .para {
+    position: absolute;
+    right: 20px;
+    top: 34vh;
     padding: 20px;
     font-style: normal;
     font-weight: 200;
     font-size: 1.3rem;
     line-height: 180%;
     width: 47vw;
-    flex-direction: column;
-    align-items: flex-start;
+    /* flex-direction: column; */
+    /* align-items: flex-end; */
 }
-
-
 .secdiv {
     display: flex;
     width: 100vw;
     /* overflow: hidden; */
     flex-direction: row;
     justify-content: space-around;
-    position: relative;
+    /* position: relative;
     height: 248px;
     left: 43px;
-    top: 608px;
+    top: ; */
     align-items: center;
 
 }
@@ -164,11 +168,11 @@ nav a:hover{
 }
 
 .thirdiv {
-    position: relative;
-    /* width: 850px; */
-    /* height: 966px; */
+    /* position: relative;
+    width: 850px;
+    height: 966px;
     left: 0px;
-    top: 754px;
+    top: 754px; */
 }
 
 .info {
@@ -207,4 +211,30 @@ nav a:hover{
     position: absolute;
     z-index: 6;
     right: 0px;
+}
+footer{
+    color: rgba(36, 35, 35) !important;
+    /* color:#caced1 !important; */
+ }
+
+ li{
+     margin-top: 20px ;
+     margin-bottom: 20px ;
+ }
+ 
+.Careers{ 
+    cursor: pointer;
+    color: #1E88E5;
+}
+
+.row-1{
+    /* background-color:#1E242A !important; */
+    background-color: #f8b45b !important;
+    /* background-color: #8ca2fb !important; */
+}
+
+.row-2{
+    background-color: #fec984 !important;
+    /* background-color: hwb(219 37% 11%) !important; */
+    /* background-color: #28323C !important; */
 }

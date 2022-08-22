@@ -24,7 +24,7 @@
           <input class="opt3" type="radio" name="q1" id="o3"> {{i.option3}}<br>
           <input class="opt4" type="radio" name="q1" id="o4"> {{i.option4}}<br>
         </div>
-        <button onclick="next()" class="next">Next</button>
+        <button id="next" onclick="next()" class="next">Next</button>
       </div>
       {% endfor %}
       <div class="no_ques">
@@ -37,8 +37,12 @@
               <span>{{i.no}}</span>
             </div>
           {% endfor %}
-
-          <button type = "submit" class = "but">submit</button>
+          <button class = "but" onclick="submit()">submit</button>
+          <form method="post" action="exam" style="display: none;">
+            {% csrf_token %}
+            <input name="ans" id="ans">
+            <button type="submit" id="pseudo"></button>
+          </form>
         </div>
       </div>
     </div>
@@ -48,9 +52,15 @@
       {% endfor %}
       document.getElementById(1).style.display="block";
       var dis=1;
-      var answer={1:'',2:'',3:'',4:''}
+      var answer={1:0,2:0,3:0,4:0}
       function next(){
-        if(dis < {{len}}){
+        if(dis == {{len}}-1){
+          document.getElementById("next").innerHTML = "Done";
+          document.getElementById(dis).style.display="none";
+          dis=dis+1;
+          document.getElementById(dis).style.display="block";
+        }
+        else if(dis < {{len}}){
           document.getElementById(dis).style.display="none";
           dis=dis+1;
           document.getElementById(dis).style.display="block";
@@ -78,6 +88,13 @@
         else{
           document.getElementsByClassName("attempt")[dis-2].style.backgroundColor="#FA8072";
         }
+      }
+      function submit(){
+        parse = JSON.stringify(answer);
+        document.getElementById('ans').value=parse;
+        console.log(answer);
+        document.getElementById('pseudo').click();
+
       }
     </script>
   </body>

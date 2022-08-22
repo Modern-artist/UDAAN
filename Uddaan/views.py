@@ -113,9 +113,9 @@ def get_notice():
         b.append(c)
         a=cursor.fetchone()
     return b
-def insert_mark(reg,mark):
+def insert_mark(email,mark):
     cursor=mydb.cursor(buffered=True)
-    cursor.execute('UPDATE student SET mark = %s WHERE registration_no = %s', (mark, reg))
+    cursor.execute('UPDATE student SET mark = %s WHERE email = %s', (mark, email))
     mydb.commit()
 
 def allot(reg,p1,p2,p3,p4,p5):
@@ -543,8 +543,19 @@ def i_profile(request):
     return redirect('i_login')
 
 def exam(request):
-    global loggedin
+    global loggedin, session_email
     if loggedin:
-        param={'questions':questions(),'len':len(questions())}
-        return render(request, 'exam.html',param)
+        q=questions()
+        mark=0
+        param={'questions':q,'len':len(q)}
+        answer=request.POST.get('ans','')
+        if(answer != ''):
+            answer=answer.split(":")
+            for i in range(len(q)):
+                if(int(answer[i+1][0])==int(q[i]['no'])):
+                    mark=mark+1
+            print(mark)
+            insert_mark(session_email, mark)
+            return redirect('dashboard')
+        return render(request, 'exam.html', param)
     return redirect('login')
