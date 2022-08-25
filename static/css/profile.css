@@ -191,3 +191,29 @@ select option{
 tr{
     width: 20vw;
 }
+.viewdoc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .info{
+    display: flex;
+    flex-direction: row;
+} */
+/*.bt{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    align-items: center;
+}
+*/
+.viewdoc img{
+    width: 40vw;
+    margin: 40px;
+}
+.viewdoc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
