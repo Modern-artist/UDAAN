@@ -11,6 +11,45 @@ body {
   height: 100vh;
   background-image: url("https://img.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg?w=2000&t=st=1660024850~exp=1660025450~hmac=a8ef6737d690f33dfa5665f443d04818849dddb54b7bd5ec020974388fff61f4");
   background-size: cover;
+  overflow: hidden;
+}
+.logo {
+  position: relative;
+  flex-direction: row;
+}
+
+.logo img {
+  /* padding: 10px; */
+  width: 50px;
+  height: 50px;
+  margin: 0 10px 0 10px;
+  /* margin: 0; */
+}
+
+.nav {
+  width: 25vw;
+  justify-content: space-between;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  width: auto;
+  height: 40px;
+  font-weight: 300;
+  padding: 6px 16px;
+  /* border-bottom: 2px solid #656565; */
+  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 99px;
+  font-size: 1.2rem;
+  transition: 0.3s ease-in-out;
+}
+nav a:hover{
+  scale: 1.05;
+  font-weight: 400;
+  background-color: #dfdfdf;
+  box-shadow: 3px 3px 10px rgba(36, 35, 35, 0.25);
 }
 
 a {
@@ -19,7 +58,9 @@ a {
   text-decoration: none;
   font-weight: 400;
 }
-
+nav h2{
+  padding-top: 9px;
+}
 h2 {
   text-align: center;
   font-size: 16px;
