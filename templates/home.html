@@ -24,7 +24,9 @@
                 <h2>UDAAN</h2>
             </div>
             <div class="nav">
-                <a href="">Home</a><a href="">Contact</a><a href="">About us</a>
+                <a href="http://127.0.0.1:8000/home">Home</a>
+                <a href="http://127.0.0.1:8000/home#idthirdiv">About us</a>
+                <a href="http://127.0.0.1:8000/home#idcontact">Contact</a>
             </div>
             {% if login %}
             <div class="btns">
@@ -41,20 +43,45 @@
                 </div>
             {% endif %}
         </nav>
-        <div class="boxer" id="rbtn">
+         <div class="boxer" id="rbtn">
             <a href="p_details"><button type="button" class="btn btn-info" style="margin: 0 6px 6px 0;">Regiester as Student</button></a><br>
             <a href="i_details"><button type="button" class="btn btn-info" style="margin: 0 6px 6px 0;">Regiester as Institute</button></a>
         </div>
         <div class="boxer" id="lbtn">
-            <a href="login"><button type="button" class="btn btn-info" style="margin: 0 16px 6px 0;">Login as Student</button></a><br>
-            <a href="i_login"><button type="button" class="btn btn-info" style="margin: 0 16px 6px 0;">Login as Institute</button></a>
+            <a href="login"><button type="button" class="btn btn-primary" style="margin: 0 16px 6px 0;">Login as Student</button></a><br>
+            <a href="i_login"><button type="button" class="btn btn-primary" style="margin: 0 16px 6px 0;">Login as Institute</button></a>
         </div>
         <div class="para">
+            <h1 style="font-size:3em">We Make <span style="color: orange; margin: 0 0 40px 0;"> FUTURE</span></h1>
             <p>This website acts as a link between the financially weak students who cannot afford to get coaching for
                 various competitive examinations and coaching institutes.</p>
             <button type="button" class="btn btn-warning" onclick="clicking_reg()">Register now
             </button>
         </div>
+
+
+
+        {% comment %} use less sec {% endcomment %}
+
+
+        {% comment %} <div class="boxer" id="rbtn">
+            <a href=""><button type="button" class="btn btn-info" style="margin: 0 6px 6px 0;">Regiester as Student</button></a><br>
+            <a href=""><button type="button" class="btn btn-info" style="margin: 0 6px 6px 0;">Regiester as Institute</button></a>
+        </div>
+        <div class="boxer" id="lbtn">
+            <a href=""><button type="button" class="btn btn-info" style="margin: 0 16px 6px 0;">Login as Student</button></a><br>
+            <a href=""><button type="button" class="btn btn-info" style="margin: 0 16px 6px 0;">Login as Institute</button></a>
+        </div>
+        <div class="para">
+            <h1 style="font-size:3em">We Make <span style="color: orange; margin: 0 0 40px 0;"> FUTURE</span></h1>
+            <p>This website acts as a link between the financially weak students who cannot afford to get coaching for
+                various competitive examinations and coaching institutes.</p>
+            <button type="button" class="btn btn-warning" >Register now
+            </button>
+        </div> {% endcomment %}
+
+                {% comment %} use less sec {% endcomment %}
+                
     </div>
     <div class="secdiv">
         <div class="utube">
@@ -80,7 +107,7 @@
             </ul>
         </div>
     </div>
-    <div class="thirdiv">
+    <div class="thirdiv" id="idthirdiv">
         <h1 class="sndhed">
             <center>How can we Bring Change ?</center>
         </h1>
@@ -119,7 +146,7 @@
             </div>
             <img src="{% static 'img/3.png' %}" alt="">
         </div>
-        <footer >
+        <footer id="idcontact">
             <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
                 <div class="col-12">
                      <div class="row row-2">

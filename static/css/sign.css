@@ -45,12 +45,12 @@ body {
   font-size: 1.2rem;
   transition: 0.3s ease-in-out;
 }
-nav a:hover{
+/* nav a:hover{
   scale: 1.05;
   font-weight: 400;
   background-color: #dfdfdf;
   box-shadow: 3px 3px 10px rgba(36, 35, 35, 0.25);
-}
+} */
 
 a {
   color: #92badd;

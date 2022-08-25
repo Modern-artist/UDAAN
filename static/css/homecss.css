@@ -4,6 +4,9 @@
     /* width: 100vh; */
     /* overflow: hidden; */
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     overflow-x: hidden;
 }
