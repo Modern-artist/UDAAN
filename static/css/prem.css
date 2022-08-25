@@ -7,20 +7,21 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 .logo {
-  display: flex;
-  flex-direction: row;
+  position: absolute;
+  /* flex-direction: row; */
 }
 
 .logo img {
   /* padding: 10px; */
   width: 50px;
   height: 50px;
-  margin: 0 10px 0 0;
+  margin: 10px 0px 0 10px;
   /* margin: 0; */
 }
 
 .nav {
   width: 25vw;
+  margin: 20px;
   justify-content: space-between;
 }
 

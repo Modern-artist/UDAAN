@@ -14,8 +14,8 @@ body {
   overflow: hidden;
 }
 .logo {
-  position: relative;
-  flex-direction: row;
+  position: absolute;
+  z-index: 100;
 }
 
 .logo img {
